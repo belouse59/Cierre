@@ -29,11 +29,48 @@
     header h1 {
       font-size: 20px;
     }
+    .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #1f1f1f;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+@media(max-width: 600px) {
+  .logo img {
+  height: 40px;
+  }
+}
+.logo:hover img {
+  transform: scale(1.08);
+}
+.hidden {
+  transform: translateY(-100%);
+}
 
     .cta-btn {
       background: #ff7a00;
       color: white;
-      padding: 10px 15px;
+      padding: 15px 15px;
       border: none;
       cursor: pointer;
       border-radius: 4px;
@@ -41,61 +78,364 @@
       font-weight: bold;
     }
 
-    .hero {
-      background: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=60') center/cover;
-      color: white;
-      height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-      position: relative;
-    }
+@media(max-width: 600px) {
+  .cta-btn {
+  font-size: xx-small;
+  }
+}
+.hero-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0,0,0,0.6);
-    }
+/* HERO takes remaining space above trust */
+.hero {
+  flex: 1;
+  background: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=60') center/cover;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+}
 
-    .hero-content {
-      position: relative;
-      max-width: 700px;
-    }
+/* dark overlay */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,0) 40%,
+    rgba(0,0,0,0) 60%,
+    rgba(0,0,0,1) 100%
+  );
 
-    .hero h2 {
-      font-size: 36px;
-      margin-bottom: 15px;
-    }
+}
 
-    .hero p {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
 
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
+.hero-content {
+  position: relative;
+  max-width: 700px;
+  padding: 0 10px;
+  backdrop-filter: blur(4px);
+  background: rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
 
-    .card {
-      border: 1px solid #ddd;
-      padding: 20px;
-      border-radius: 8px;
-      background: #fff;
-    }
+.hero h2 {
+  font-size: clamp(24px, 4vw, 42px);
+  margin-bottom: 15px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+.hero p {
+  font-size: clamp(14px, 2vw, 18px);
+  margin-bottom: 20px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* TRUST always visible at bottom */
+.trust {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #f7f7f7;
+  padding: 25px 10px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.trust-item {
+  position: relative;
+  padding: 10px;
+  text-align: center;
+  cursor: default;
+  flex: 1;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: 
+    opacity 0.6s ease-out,
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); /* smoother easing */
+}
+
+.trust-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.trust-item.visible:hover {
+  transform: translateY(-4px);
+}
+.trust-number {
+  display: block;
+  font-size: clamp(18px, 3vw, 22px);
+  font-weight: 700;
+  color: #1f1f1f;
+}
+
+.trust-label {
+  display: block;
+  font-size: clamp(12px, 2vw, 14px);
+  color: #666;
+  margin-top: 4px;
+}
+.trust-item:not(:last-child) {
+  position: relative;
+}
+
+@media (min-width: 901px) {
+  .trust-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: #ddd;
+      transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.5s ease;
+
+  }
+  .trust-item.visible:not(:last-child)::after {
+  transform: scaleY(1);
+}
+}
+
+
+@media (max-width: 900px) {
+  .trust {
+    grid-template-columns: repeat(4, minmax(80px, 1fr));
+    padding: 12px 10px;
+    gap: 8px;
+    overflow-x: auto;
+  }
+
+  .trust-item {
+    padding: 6px 4px;
+  }
+
+  .trust-number {
+    font-size: 16px;
+  }
+
+  .trust-label {
+    font-size: 10px;
+  }
+}
+    .services-section {
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.services-section h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 28px;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.services-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.card p {
+  color: #555;
+  font-size: 14px;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card:hover h3 {
+  color: #ff7a00;
+}
+
+.card-image {
+  height: 140px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.before-after {
+  padding: clamp(30px, 6vh, 60px) 20px;
+  text-align: center;
+  background: #fff;
+  scroll-margin-top: 80px;
+}
+
+@media (min-height: 700px) and (max-height: 900px) {
+  .before-after {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.before-after h2 {
+  margin-bottom: clamp(20px, 4vh, 40px);
+  font-size: 28px;
+}
+
+.ba-tabs {
+  margin-top: clamp(15px, 3vh, 20px);
+}
+
+
+.ba-container {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: ew-resize;
+
+  aspect-ratio: 16 / 9;
+}
+
+.ba-img {
+  width: 100%;
+  display: block;
+}
+
+.ba-img.after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  transition: width 0.2s ease;
+}
+
+.ba-slider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  background: white;
+  cursor: ew-resize;
+  transition: left 0.2s ease;
+}
+
+.ba-slider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  width: 20px;
+  height: 20px;
+  background: #ff7a00;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.ba-label {
+  position: absolute;
+  top: 15px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 
+    background 0.25s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+.ba-label.active {
+  background: #ff7a00;
+  transform: scale(1.05);
+}
+
+.ba-label:hover {
+  transform: scale(1.05);
+}
+
+.before-label { left: 15px; }
+.after-label { right: 15px; }
+
+.ba-hint {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 20px;
+  opacity: 0.8;
+  transition: opacity 0.4s ease;
+}
+
+/* Tabs */
+.ba-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.ba-tabs button {
+  background: transparent;
+  border: 1px solid #ddd;
+  padding: 8px 14px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.ba-tabs button.active {
+  background: #ff7a00;
+  color: white;
+  border-color: #ff7a00;
+}
+
+.ba-tabs button:hover {
+  border-color: #ff7a00;
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .ba-container {
+    border-radius: 8px;
+  }
+}
 
     .portfolio img {
       width: 100%;
@@ -103,19 +443,6 @@
       margin-bottom: 10px;
     }
 
-    .trust {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      background: #f5f5f5;
-      padding: 30px;
-      text-align: center;
-    }
-
-    .trust div {
-      margin: 10px;
-      font-weight: bold;
-    }
 
     .contact {
       background: #1f1f1f;
@@ -145,45 +472,136 @@
 </head>
 <body>
 
-<header>
-  <h1>BuildPro Renovations</h1>
+<header id="navbar" class="navbar hidden">
+  <a href="#top" class="logo">
+  <img src="logo-header.png" alt="BuildPro Renovations Logo" />
+</a>
   <a class="cta-btn" href="#contact">Get a Quote</a>
 </header>
+<section class="hero-wrapper">
 
-<section class="hero">
-  <div class="hero-content">
-    <h2>Reliable Renovation & Construction Services</h2>
-    <p>From foundations to finishing touches — we build with precision and trust.</p>
-    <a class="cta-btn" href="#contact">Request a Free Quote</a>
+  <div class="hero">
+    <div class="hero-content">
+      <h2>Reliable Renovation & Construction Services</h2>
+      <p>From foundations to finishing touches — we build with precision and trust.</p>
+      <a class="cta-btn" href="#contact">Request a Free Quote</a>
+    </div>
   </div>
+
+  <div class="trust">
+  <div class="trust-item">
+    <span class="trust-number" data-target="10" data-suffix="+">0</span>
+    <span class="trust-label">Years Experience</span>
+  </div>
+
+  <div class="trust-item">
+    <span class="trust-number" data-target="250">0</span>
+    <span class="trust-label">Projects Completed</span>
+  </div>
+
+  <div class="trust-item">
+    <span class="trust-number" data-target="98">0</span>
+    <span class="trust-label">Client Satisfaction (%)</span>
+  </div>
+
+  <div class="trust-item">
+    <span class="trust-number" data-target="48">0</span>
+    <span class="trust-label">Hours Avg. Response</span>
+  </div>
+</div>
+
 </section>
 
-<section class="trust">
-  <div>✔ 10+ Years Experience</div>
-  <div>✔ Licensed & Insured</div>
-  <div>✔ Free Estimates</div>
-  <div>✔ Local Team</div>
-</section>
-
-<section>
+<section class="services-section">
   <h2>Our Services</h2>
+
   <div class="services">
+<div class="card">
+  <div class="card-image">
+    <img img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=60" alt="Home renovation" alt="Home renovation project">
+  </div>
+  <h3>Home Renovation</h3>
+  <p>Full renovation projects, from structure to finishing.</p>
+</div>
+
     <div class="card">
-      <h3>Home Renovation</h3>
-      <p>Complete interior and exterior renovation solutions.</p>
-    </div>
-    <div class="card">
+      <div class="card-image">
+      <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=60" alt="Bathroom remodeling">
+      </div>
       <h3>Bathroom Remodeling</h3>
-      <p>Modern, functional and high-quality bathroom upgrades.</p>
+      <p>Modern, functional and durable bathroom transformations.</p>
     </div>
+
     <div class="card">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=60" alt="Construction extension">
+      </div>
       <h3>Extensions</h3>
-      <p>Expand your living space with solid structural work.</p>
+      <p>Expand your space with solid and compliant construction.</p>
     </div>
+
     <div class="card">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=800&q=60" alt="Roofing work">
+      </div>
       <h3>Roofing</h3>
-      <p>Durable roofing solutions built to last.</p>
+      <p>Reliable roofing solutions built for long-term protection.</p>
     </div>
+  </div>
+  <div class="services-cta">
+  <a href="#contact" class="cta-btn">Get a Free Quote</a>
+</div>
+</section>
+<section class="before-after">
+  <h2>Before & After</h2>
+
+  <div class="ba-wrapper">
+    
+    <div class="ba-container" id="ba-container">
+      <!-- BEFORE -->
+      <img 
+        src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=60" 
+        class="ba-img before" 
+        id="before-img"
+        alt="Before renovation"
+      >
+
+      <!-- AFTER -->
+      <img 
+        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=60" 
+        class="ba-img after" 
+        id="after-img"
+        alt="After renovation"
+      >
+
+      <div class="ba-slider" id="slider"></div>
+
+      <div class="ba-label before-label" id="before-label">Before</div>
+      <div class="ba-label after-label" id="after-label">After</div>
+      <div class="ba-hint" id="ba-hint">⇆ Click & Slide</div>
+    </div>
+
+    <!-- TABS -->
+    <div class="ba-tabs">
+      <button class="active"
+        data-before="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=60"
+        data-after="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=60">
+        Living Room
+      </button>
+
+      <button
+        data-before="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=60"
+        data-after="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=60">
+        Bathroom
+      </button>
+
+      <button
+        data-before="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=60"
+        data-after="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=60">
+        Kitchen
+      </button>
+    </div>
+
   </div>
 </section>
 
@@ -210,6 +628,247 @@
 <footer>
   <p>© 2026 BuildPro Renovations. All rights reserved.</p>
 </footer>
+<script>
+  //nav bar to appear when hero section gone
+  const navbar = document.getElementById("navbar");
+  const hero = document.querySelector(".hero-wrapper");
 
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        navbar.classList.add("hidden");
+      } else {
+        navbar.classList.remove("hidden");
+      }
+    },
+    { threshold: 0.2 }
+  );
+
+  observer.observe(hero);
+</script>
+
+<script>
+
+  // Animate trust items on scroll
+const trustSection = document.querySelector('.trust');
+
+const trustObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) {
+    const items = document.querySelectorAll('.trust-item');
+
+    items.forEach((item, index) => {
+      setTimeout(() => {
+        item.classList.add('visible');
+      }, 150 + index * 120);
+    });
+
+    trustObserver.disconnect(); // run once only
+  }
+}, { threshold: 0.5 });
+
+trustObserver.observe(trustSection);
+
+</script>
+
+<script>
+const counters = document.querySelectorAll('.trust-number');
+
+const counterObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) {
+
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      const suffix = counter.getAttribute('data-suffix') || '';
+      let count = 0;
+
+      const update = () => {
+        const increment = target / 50;
+
+        if (count < target) {
+          count += increment;
+          counter.innerText = Math.floor(count) + suffix;
+          requestAnimationFrame(update);
+        } else {
+          counter.innerText = Math.floor(count) + suffix;
+        }
+      };
+
+      update();
+    });
+
+    counterObserver.disconnect();
+  }
+}, { threshold: 0.5 });
+
+counterObserver.observe(document.querySelector('.trust'));
+</script>
+<script>
+const container = document.getElementById('ba-container');
+const slider = document.getElementById('slider');
+const afterImg = document.getElementById('after-img');
+const beforeImg = document.getElementById('before-img');
+
+let isDragging = false;
+let hasDragged = false;
+// Mouse
+slider.addEventListener('mousedown', () => {
+  isDragging = isDragging === true ? false :true
+});
+window.addEventListener('mouseup', () => {
+  console.log(isDragging);
+  if (!isDragging) return;
+   if (!hasDragged) {
+    slider.style.left = "50%";
+      afterImg.style.width = "50%";
+      hasDragged = true;
+      return;
+  }
+
+  const rect = container.getBoundingClientRect();
+  const currentLeft = parseFloat(slider.style.left);
+  const percent = currentLeft / rect.width;
+
+  if (percent < 0.1) {
+    slider.style.left = "0%";
+    afterImg.style.width = "0%";
+    beforeLabel.classList.add('active');
+    afterLabel.classList.remove('active');
+  }
+
+  if (percent > 0.9) {
+    slider.style.left = "100%";
+    afterImg.style.width = "100%";
+    afterLabel.classList.add('active');
+    beforeLabel.classList.remove('active');
+  }
+});
+window.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+
+  const rect = container.getBoundingClientRect();
+  let x = e.clientX - rect.left;
+  x = Math.max(0, Math.min(x, rect.width));
+
+  slider.style.left = x + 'px';
+  afterImg.style.width = x + 'px';
+
+updateLabelState(x, rect.width);});
+
+// Touch
+slider.addEventListener('touchstart', () => isDragging = true);
+window.addEventListener('touchend', () => isDragging = false);
+
+window.addEventListener('touchmove', (e) => {
+  if (!isDragging) return;
+
+  const rect = container.getBoundingClientRect();
+  let x = e.touches[0].clientX - rect.left;
+  x = Math.max(0, Math.min(x, rect.width));
+
+  slider.style.left = x + 'px';
+  afterImg.style.width = x + 'px';
+});
+
+// Auto animation
+let hasAnimated = false;
+
+const baObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting && !hasAnimated) {
+    hasAnimated = true;
+
+    setTimeout(() => {
+      slider.style.left = "80%";
+      afterImg.style.width = "80%";
+    }, 300);
+
+    setTimeout(() => {
+      slider.style.left = "20%";
+      afterImg.style.width = "20%";
+    }, 900);
+
+    setTimeout(() => {
+      slider.style.left = "50%";
+      afterImg.style.width = "50%";
+    }, 1500);
+  }
+}, { threshold: 0.5 });
+
+baObserver.observe(container);
+
+// Tabs switching
+const tabs = document.querySelectorAll('.ba-tabs button');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    beforeImg.src = tab.dataset.before;
+    afterImg.src = tab.dataset.after;
+
+    slider.style.left = "50%";
+    afterImg.style.width = "50%";
+  });
+});
+</script>
+
+<script>
+const beforeLabel = document.getElementById('before-label');
+const afterLabel = document.getElementById('after-label');
+
+// --- CLICK EVENTS
+
+beforeLabel.addEventListener('click', () => {
+  slider.style.left = "0%";
+  afterImg.style.width = "0%";
+
+  beforeLabel.classList.add('active');
+  afterLabel.classList.remove('active');
+});
+
+afterLabel.addEventListener('click', () => {
+  slider.style.left = "100%";
+  afterImg.style.width = "100%";
+
+  afterLabel.classList.add('active');
+  beforeLabel.classList.remove('active');
+});
+
+
+// --- SYNC WITH DRAG
+
+function updateLabelState(x, width) {
+  const percent = x / width;
+
+  if (percent <= 0.05) {
+    beforeLabel.classList.add('active');
+    afterLabel.classList.remove('active');
+  } 
+  else if (percent >= 0.95) {
+    afterLabel.classList.add('active');
+    beforeLabel.classList.remove('active');
+  } 
+  else {
+    beforeLabel.classList.remove('active');
+    afterLabel.classList.remove('active');
+  }
+}
+
+const hint = document.getElementById('ba-hint');
+
+function hideHint() {
+  if (hint) hint.style.opacity = 0;
+}
+
+slider.addEventListener('mousedown', hideHint);
+slider.addEventListener('touchstart', hideHint);
+
+beforeLabel.addEventListener('click', hideHint);
+afterLabel.addEventListener('click', hideHint);
+setTimeout(() => {
+  afterLabel.classList.add('active');
+}, 1600);
+</script>
 </body>
 </html>
