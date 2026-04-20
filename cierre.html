@@ -8,15 +8,15 @@
   <title>Ristrutturazioni e Costruzioni | Impresa Edile Locale in Messina</title>
 
   <meta name="description"
-    content="Reliable renovation and construction services in Amiens. Extensions, bathroom remodeling, roofing and full home renovations. Free quotes and trusted local team." />
+    content="Reliable renovation and construction services in Messina. Extensions, bathroom remodeling, roofing and full home renovations. Free quotes and trusted local team." />
   <meta name="keywords"
-    content="renovation Amiens, construction Amiens, home renovation, bathroom remodeling, roofing, building contractor Amiens, house extension France" />
+    content="renovation Messina, construction Messina, home renovation, bathroom remodeling, roofing, building contractor Messina, house extension Italy" />
   <meta name="author" content="BuildPro Renovations" />
 
   <!-- Open Graph (for social sharing) -->
-  <meta property="og:title" content="BuildPro Renovations | Construction & Renovation in Amiens" />
+  <meta property="og:title" content="BuildPro Renovations | Construction & Renovation in Messina" />
   <meta property="og:description"
-    content="Trusted local renovation company in Amiens. High-quality construction, extensions, bathrooms and roofing." />
+    content="Trusted local renovation company in Messina. High-quality construction, extensions, bathrooms and roofing." />
   <meta property="og:type" content="website" />
   <meta property="og:image"
     content="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1400&q=80" />
@@ -24,8 +24,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="BuildPro Renovations | Amiens" />
-  <meta name="twitter:description" content="Trusted renovation & construction services in Amiens." />
+  <meta name="twitter:title" content="BuildPro Renovations | Messina" />
+  <meta name="twitter:description" content="Trusted renovation & construction services in Messina." />
   <meta name="twitter:image"
     content="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1400&q=80" />
 
@@ -99,7 +99,7 @@
     }
 
     .cta-btn {
-      background: #ff7a00;
+      background: #340C70;
       color: white;
       padding: 15px 15px;
       border: none;
@@ -107,6 +107,9 @@
       border-radius: 4px;
       text-decoration: none;
       font-weight: bold;
+    }
+    .cta-btn:hover {
+      opacity: 0.9;
     }
 
     @media(max-width: 600px) {
@@ -200,12 +203,7 @@
       /* smoother easing */
     }
 
-    .trust-item.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .trust-item.visible:hover {
+    .trust-item:hover {
       transform: translateY(-4px);
     }
 
@@ -313,10 +311,11 @@
     .card:hover {
       transform: translateY(-6px);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
     }
 
     .card:hover h3 {
-      color: #ff7a00;
+      color: #340C70;
     }
 
     .card-image {
@@ -400,7 +399,7 @@
       left: -8px;
       width: 20px;
       height: 20px;
-      background: #ff7a00;
+      background: #340C70;
       border-radius: 50%;
       transform: translateY(-50%);
       cursor: pointer;
@@ -422,7 +421,7 @@
     }
 
     .ba-label.active {
-      background: #ff7a00;
+      background: #340C70;
       transform: scale(1.05);
     }
 
@@ -470,13 +469,13 @@
     }
 
     .ba-tabs button.active {
-      background: #ff7a00;
+      background: #340C70;
       color: white;
-      border-color: #ff7a00;
+      border-color: #340C70;
     }
 
     .ba-tabs button:hover {
-      border-color: #ff7a00;
+      border-color: #340C70;
       cursor: pointer;
     }
 
@@ -515,9 +514,11 @@
       transition: all 0.6s ease;
     }
 
-    .step.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .step:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-6px);
+      cursor: pointer;
+
     }
 
     .step-number {
@@ -525,7 +526,7 @@
       height: 35px;
       margin: 0 auto 15px;
       border-radius: 50%;
-      background: #ff7a00;
+      background: #340C70;
       color: white;
       display: flex;
       align-items: center;
@@ -958,7 +959,7 @@
 
     <div class="trust">
       <div class="trust-item">
-        <span class="trust-number" data-target="10" data-suffix="+">0</span>
+        <span class="trust-number" data-target="20" data-suffix="+">0</span>
         <span class="trust-label">Anni di esperienza</span>
       </div>
 
@@ -1161,7 +1162,7 @@
       <div class="text">
         <h2>Chi siamo</h2>
         <p>
-          Siamo un team locale di ristrutturazioni con sede ad Amiens e oltre 10 anni di esperienza. Ci concentriamo su
+          Siamo un team locale di ristrutturazioni con sede ad Messina e oltre 20 anni di esperienza. Ci concentriamo su
           lavori affidabili, comunicazione chiara e risultati di alta qualità.
         </p>
 
@@ -1181,7 +1182,7 @@
       <div class="text">
         <h2>Dove operiamo</h2>
         <p>
-          Con sede ad Amiens, operiamo nelle aree circostanti con disponibilità flessibile dal lunedì al sabato
+          Con sede ad Messina, operiamo nelle aree circostanti con disponibilità flessibile dal lunedì al sabato
         </p>
       </div>
 
@@ -1363,23 +1364,6 @@
           return;
         }
 
-        const rect = container.getBoundingClientRect();
-        const currentLeft = parseFloat(slider.style.left);
-        const percent = currentLeft / rect.width;
-
-        if (percent < 0.1) {
-          slider.style.left = "0%";
-          afterImg.style.width = "0%";
-          beforeLabel.classList.add('active');
-          afterLabel.classList.remove('active');
-        }
-
-        if (percent > 0.9) {
-          slider.style.left = "100%";
-          afterImg.style.width = "100%";
-          afterLabel.classList.add('active');
-          beforeLabel.classList.remove('active');
-        }
       });
       window.addEventListener('mousemove', (e) => {
         if (!isDragging) return;
@@ -1481,11 +1465,15 @@
       function updateLabelState(x, width) {
         const percent = x / width;
 
-        if (percent <= 0.05) {
+        if (percent <= 0.2) {
+          slider.style.left = "0%";
+          afterImg.style.width = "0%";
           beforeLabel.classList.add('active');
           afterLabel.classList.remove('active');
         }
-        else if (percent >= 0.95) {
+        else if (percent >= 0.8) {
+          slider.style.left = "100%";
+          afterImg.style.width = "100%";
           afterLabel.classList.add('active');
           beforeLabel.classList.remove('active');
         }
@@ -1493,6 +1481,7 @@
           beforeLabel.classList.remove('active');
           afterLabel.classList.remove('active');
         }
+    
       }
 
       const hint = document.getElementById('ba-hint');
