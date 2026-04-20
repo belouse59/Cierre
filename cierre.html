@@ -1,9 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Renovation & Construction Services</title>
+
+  <title>Ristrutturazioni e Costruzioni | Impresa Edile Locale in Messina</title>
+
+  <meta name="description"
+    content="Reliable renovation and construction services in Amiens. Extensions, bathroom remodeling, roofing and full home renovations. Free quotes and trusted local team." />
+  <meta name="keywords"
+    content="renovation Amiens, construction Amiens, home renovation, bathroom remodeling, roofing, building contractor Amiens, house extension France" />
+  <meta name="author" content="BuildPro Renovations" />
+
+  <!-- Open Graph (for social sharing) -->
+  <meta property="og:title" content="BuildPro Renovations | Construction & Renovation in Amiens" />
+  <meta property="og:description"
+    content="Trusted local renovation company in Amiens. High-quality construction, extensions, bathrooms and roofing." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image"
+    content="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1400&q=80" />
+  <meta property="og:url" content="https://yourdomain.com" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BuildPro Renovations | Amiens" />
+  <meta name="twitter:description" content="Trusted renovation & construction services in Amiens." />
+  <meta name="twitter:image"
+    content="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1400&q=80" />
+
+  <!-- Favicon (optional but recommended) -->
+  <link rel="icon" type="image/png" href="logo-header.jpg">
   <style>
     * {
       margin: 0;
@@ -29,43 +56,47 @@
     header h1 {
       font-size: 20px;
     }
+
     .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: #1f1f1f;
-  color: white;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-  transition: transform 0.3s ease;
-}
-.logo {
-  display: flex;
-  align-items: center;
-}
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #1f1f1f;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+    }
 
-.logo img {
-  height: 60px;
-  width: auto;
-  object-fit: contain;
-  transition: transform 0.2s ease;
-}
+    .logo {
+      display: flex;
+      align-items: center;
+    }
 
-@media(max-width: 600px) {
-  .logo img {
-  height: 40px;
-  }
-}
-.logo:hover img {
-  transform: scale(1.08);
-}
-.hidden {
-  transform: translateY(-100%);
-}
+    .logo img {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.2s ease;
+    }
+
+    @media(max-width: 600px) {
+      .logo img {
+        height: 40px;
+      }
+    }
+
+    .logo:hover img {
+      transform: scale(1.08);
+    }
+
+    .hidden {
+      transform: translateY(-100%);
+    }
 
     .cta-btn {
       background: #ff7a00;
@@ -78,389 +109,624 @@
       font-weight: bold;
     }
 
-@media(max-width: 600px) {
-  .cta-btn {
-  font-size: xx-small;
-  }
-}
-.hero-wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* HERO takes remaining space above trust */
-.hero {
-  flex: 1;
-  background: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=60') center/cover;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 40px 20px;
-  position: relative;
-}
-
-/* dark overlay */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,1) 0%,
-    rgba(0,0,0,0) 40%,
-    rgba(0,0,0,0) 60%,
-    rgba(0,0,0,1) 100%
-  );
-
-}
-
-
-.hero-content {
-  position: relative;
-  max-width: 700px;
-  padding: 0 10px;
-  backdrop-filter: blur(4px);
-  background: rgba(0,0,0,0.3);
-  border-radius: 10px;
-}
-
-
-.hero h2 {
-  font-size: clamp(24px, 4vw, 42px);
-  margin-bottom: 15px;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-}
-
-.hero p {
-  font-size: clamp(14px, 2vw, 18px);
-  margin-bottom: 20px;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-}
-
-/* TRUST always visible at bottom */
-.trust {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  background: #f7f7f7;
-  padding: 25px 10px;
-  border-top: 1px solid #e5e5e5;
-}
-
-.trust-item {
-  position: relative;
-  padding: 10px;
-  text-align: center;
-  cursor: default;
-  flex: 1;
-  opacity: 0;
-  transform: translateY(12px);
-  transition: 
-    opacity 0.6s ease-out,
-    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); /* smoother easing */
-}
-
-.trust-item.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.trust-item.visible:hover {
-  transform: translateY(-4px);
-}
-.trust-number {
-  display: block;
-  font-size: clamp(18px, 3vw, 22px);
-  font-weight: 700;
-  color: #1f1f1f;
-}
-
-.trust-label {
-  display: block;
-  font-size: clamp(12px, 2vw, 14px);
-  color: #666;
-  margin-top: 4px;
-}
-.trust-item:not(:last-child) {
-  position: relative;
-}
-
-@media (min-width: 901px) {
-  .trust-item:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 20%;
-    height: 60%;
-    width: 1px;
-    background: #ddd;
-      transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.5s ease;
-
-  }
-  .trust-item.visible:not(:last-child)::after {
-  transform: scaleY(1);
-}
-}
-
-
-@media (max-width: 900px) {
-  .trust {
-    grid-template-columns: repeat(4, minmax(80px, 1fr));
-    padding: 12px 10px;
-    gap: 8px;
-    overflow-x: auto;
-  }
-
-  .trust-item {
-    padding: 6px 4px;
-  }
-
-  .trust-number {
-    font-size: 16px;
-  }
-
-  .trust-label {
-    font-size: 10px;
-  }
-}
-    .services-section {
-  padding: 60px 20px;
-  background: #fff;
-}
-
-.services-section h2 {
-  text-align: center;
-  margin-bottom: 50px;
-  font-size: 28px;
-}
-
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-.services-cta {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.card {
-  background: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  border: 1px solid #eee;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.card h3 {
-  margin-bottom: 10px;
-  font-size: 18px;
-}
-
-.card p {
-  color: #555;
-  font-size: 14px;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-.card:hover h3 {
-  color: #ff7a00;
-}
-
-.card-image {
-  height: 140px;
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 15px;
-}
-
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.before-after {
-  padding: clamp(30px, 6vh, 60px) 20px;
-  text-align: center;
-  background: #fff;
-  scroll-margin-top: 80px;
-}
-
-@media (min-height: 700px) and (max-height: 900px) {
-  .before-after {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-}
-
-.before-after h2 {
-  margin-bottom: clamp(20px, 4vh, 40px);
-  font-size: 28px;
-}
-
-.ba-tabs {
-  margin-top: clamp(15px, 3vh, 20px);
-}
-
-
-.ba-container {
-  position: relative;
-  max-width: 900px;
-  margin: auto;
-  overflow: hidden;
-  border-radius: 12px;
-  cursor: ew-resize;
-
-  aspect-ratio: 16 / 9;
-}
-
-.ba-img {
-  width: 100%;
-  display: block;
-}
-
-.ba-img.after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  transition: width 0.2s ease;
-}
-
-.ba-slider {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 3px;
-  height: 100%;
-  background: white;
-  cursor: ew-resize;
-  transition: left 0.2s ease;
-}
-
-.ba-slider::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: -8px;
-  width: 20px;
-  height: 20px;
-  background: #ff7a00;
-  border-radius: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
-
-.ba-label {
-  position: absolute;
-  top: 15px;
-  background: rgba(0,0,0,0.6);
-  color: white;
-  padding: 5px 10px;
-  font-size: 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: 
-    background 0.25s ease,
-    transform 0.2s ease,
-    opacity 0.2s ease;
-}
-.ba-label.active {
-  background: #ff7a00;
-  transform: scale(1.05);
-}
-
-.ba-label:hover {
-  transform: scale(1.05);
-}
-
-.before-label { left: 15px; }
-.after-label { right: 15px; }
-
-.ba-hint {
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0,0,0,0.6);
-  color: white;
-  padding: 6px 12px;
-  font-size: 12px;
-  border-radius: 20px;
-  opacity: 0.8;
-  transition: opacity 0.4s ease;
-}
-
-/* Tabs */
-.ba-tabs {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-
-.ba-tabs button {
-  background: transparent;
-  border: 1px solid #ddd;
-  padding: 8px 14px;
-  border-radius: 20px;
-  transition: all 0.2s ease;
-}
-
-.ba-tabs button.active {
-  background: #ff7a00;
-  color: white;
-  border-color: #ff7a00;
-}
-
-.ba-tabs button:hover {
-  border-color: #ff7a00;
-  cursor: pointer;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .ba-container {
-    border-radius: 8px;
-  }
-}
-
-    .portfolio img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 10px;
+    @media(max-width: 600px) {
+      .cta-btn {
+        font-size: xx-small;
+      }
     }
 
+    .hero-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media(max-width: 600px) {
+      .hero-wrapper {
+        min-height: 98vh;
+      }
+    }
+
+    /* HERO takes remaining space above trust */
+    .hero {
+      flex: 1;
+      background: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=60') center/cover;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    /* dark overlay */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(0, 0, 0, 0) 40%,
+          rgba(0, 0, 0, 0) 60%,
+          rgba(0, 0, 0, 1) 100%);
+
+    }
+
+
+    .hero-content {
+      position: relative;
+      max-width: 700px;
+      padding: 0 10px;
+      backdrop-filter: blur(4px);
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+    }
+
+
+    .hero h1 {
+      font-size: clamp(24px, 4vw, 42px);
+      margin: 15px;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: clamp(14px, 2vw, 18px);
+      margin-bottom: 20px;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    /* TRUST always visible at bottom */
+    .trust {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: #f7f7f7;
+      padding: 25px 10px;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    .trust-item {
+      position: relative;
+      padding: 10px;
+      text-align: center;
+      cursor: default;
+      flex: 1;
+      opacity: 0;
+      transform: translateY(12px);
+      transition:
+        opacity 0.6s ease-out,
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      /* smoother easing */
+    }
+
+    .trust-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .trust-item.visible:hover {
+      transform: translateY(-4px);
+    }
+
+    .trust-number {
+      display: block;
+      font-size: clamp(18px, 3vw, 22px);
+      font-weight: 700;
+      color: #1f1f1f;
+    }
+
+    .trust-label {
+      display: block;
+      font-size: clamp(12px, 2vw, 14px);
+      color: #666;
+      margin-top: 4px;
+    }
+
+    .trust-item:not(:last-child) {
+      position: relative;
+    }
+
+    @media (min-width: 901px) {
+      .trust-item:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 20%;
+        height: 60%;
+        width: 1px;
+        background: #ddd;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.5s ease;
+
+      }
+
+      .trust-item.visible:not(:last-child)::after {
+        transform: scaleY(1);
+      }
+    }
+
+
+    @media (max-width: 900px) {
+      .trust {
+        grid-template-columns: repeat(4, minmax(80px, 1fr));
+        padding: 12px 10px;
+        gap: 8px;
+        overflow-x: auto;
+      }
+
+      .trust-item {
+        padding: 6px 4px;
+      }
+
+      .trust-number {
+        font-size: 16px;
+      }
+
+      .trust-label {
+        font-size: 10px;
+      }
+    }
+
+    .services-section {
+      padding: 60px 20px;
+      background: #fff;
+    }
+
+    .services-section h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 28px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .services-cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid #eee;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 14px;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .card:hover h3 {
+      color: #ff7a00;
+    }
+
+    .card-image {
+      height: 140px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 15px;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .before-after {
+      padding: clamp(30px, 6vh, 60px) 20px;
+      text-align: center;
+      background: #fff;
+      scroll-margin-top: 80px;
+    }
+
+    @media (min-height: 700px) and (max-height: 900px) {
+      .before-after {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+
+    .before-after h2 {
+      margin-bottom: clamp(20px, 4vh, 40px);
+      font-size: 28px;
+    }
+
+    .ba-tabs {
+      margin-top: clamp(15px, 3vh, 20px);
+    }
+
+
+    .ba-container {
+      position: relative;
+      max-width: 900px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: ew-resize;
+
+      aspect-ratio: 16 / 9;
+    }
+
+    .ba-img {
+      width: 100%;
+      display: block;
+    }
+
+    .ba-img.after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      transition: width 0.2s ease;
+    }
+
+    .ba-slider {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 3px;
+      height: 100%;
+      background: white;
+      cursor: ew-resize;
+      transition: left 0.2s ease;
+    }
+
+    .ba-slider::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -8px;
+      width: 20px;
+      height: 20px;
+      background: #ff7a00;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .ba-label {
+      position: absolute;
+      top: 15px;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 5px 10px;
+      font-size: 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition:
+        background 0.25s ease,
+        transform 0.2s ease,
+        opacity 0.2s ease;
+    }
+
+    .ba-label.active {
+      background: #ff7a00;
+      transform: scale(1.05);
+    }
+
+    .ba-label:hover {
+      transform: scale(1.05);
+    }
+
+    .before-label {
+      left: 15px;
+    }
+
+    .after-label {
+      right: 15px;
+    }
+
+    .ba-hint {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 6px 12px;
+      font-size: 12px;
+      border-radius: 20px;
+      opacity: 0.8;
+      transition: opacity 0.4s ease;
+    }
+
+    /* Tabs */
+    .ba-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .ba-tabs button {
+      background: transparent;
+      border: 1px solid #ddd;
+      padding: 8px 14px;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+    }
+
+    .ba-tabs button.active {
+      background: #ff7a00;
+      color: white;
+      border-color: #ff7a00;
+    }
+
+    .ba-tabs button:hover {
+      border-color: #ff7a00;
+      cursor: pointer;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .ba-container {
+        border-radius: 8px;
+      }
+    }
+
+    .process {
+      padding: 60px 20px;
+      background: #f9f9f9;
+      text-align: center;
+    }
+
+    .process h2 {
+      margin-bottom: 40px;
+      font-size: 28px;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .step {
+      background: white;
+      padding: 25px 20px;
+      border-radius: 10px;
+      border: 1px solid #eee;
+      position: relative;
+      opacity: 0;
+      transform: translateY(15px);
+      transition: all 0.6s ease;
+    }
+
+    .step.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .step-number {
+      width: 35px;
+      height: 35px;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+      background: #ff7a00;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .step h3 {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .step p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    @media (max-width: 900px) {
+      .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .testimonials {
+      padding: 60px 20px;
+      background: #fff;
+      text-align: center;
+    }
+
+    .testimonials h2 {
+      margin-bottom: 40px;
+      font-size: 28px;
+    }
+
+    .testimonials-wrapper {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .testimonial {
+      text-align: left;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #eee;
+      background: #fafafa;
+      transition: transform 0.3s ease;
+    }
+
+    .testimonial:hover {
+      transform: translateY(-4px);
+    }
+
+    .testimonial p {
+      font-size: 15px;
+      color: #333;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .client {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: #777;
+    }
+
+    .name {
+      font-weight: 600;
+      color: #1f1f1f;
+    }
+
+    .rating {
+      margin-bottom: 25px;
+      font-size: 14px;
+      color: #555;
+      letter-spacing: 0.3px;
+    }
+
+    @media (min-width: 700px) {
+      .testimonials-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .credibility {
+      padding: 60px 20px;
+      background: #fff;
+    }
+
+    .credibility-block {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 40px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+    }
+
+    .credibility-block.reverse {
+      direction: rtl;
+    }
+
+
+    .credibility img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+      object-fit: cover;
+      transform: scale(1);
+      transition: transform 0.6s ease, filter 0.6s ease;
+    }
+
+    .credibility img:hover {
+      transform: scale(1.02);
+      filter: brightness(1.05) contrast(1.05);
+    }
+
+    .credibility h2 {
+      margin-bottom: 15px;
+    }
+
+    .credibility p {
+      color: #555;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .highlight {
+      margin-top: 15px;
+      font-weight: 600;
+      color: #1f1f1f;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 450px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    @media (max-width: 800px) {
+      .credibility-block {
+        grid-template-columns: 1fr;
+      }
+
+      .credibility-block.reverse {
+        direction: ltr;
+      }
+    }
 
     .contact {
       background: #1f1f1f;
       color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .contact h2 {
+      margin-bottom: 10px;
+    }
+
+    .contact p {
+      color: #ccc;
     }
 
     form {
       display: grid;
-      gap: 10px;
+      gap: 12px;
       max-width: 500px;
-      margin-top: 20px;
+      margin: 30px auto 0;
     }
 
-    input, textarea {
-      padding: 10px;
+    input,
+    textarea {
+      padding: 12px;
+      border-radius: 6px;
       border: none;
-      border-radius: 4px;
+      font-size: 14px;
     }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(255, 122, 0, 0.4);
+    }
+
+    .form-note {
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 5px;
+    }
+
 
     footer {
       text-align: center;
@@ -468,407 +734,899 @@
       background: #111;
       color: white;
     }
+
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+
+      width: 60px;
+      height: 60px;
+
+      border-radius: 50%;
+      background: #25D366;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+      z-index: 999;
+      transition: 0.8s ease;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    /* Logo */
+    .whatsapp-float img {
+      width: 30px;
+      height: 30px;
+    }
+
+    /* Hover effect */
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+
+    /* Chat box */
+
+
+    .whatsapp-chat {
+      position: fixed;
+      bottom: 100px;
+      right: 25px;
+
+      width: 300px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+      flex-direction: column;
+
+      overflow: hidden;
+      z-index: 9999;
+
+      transition: 0.3s ease;
+    }
+
+    .whatsapp-chat.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* Header */
+    .chat-header {
+      background: #25D366;
+      color: white;
+      padding: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chat-close-btn {
+      position: relative;
+      width: 28px;
+      height: 28px;
+
+      background: transparent;
+      border: none;
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Lines of the X */
+    .chat-close-btn {
+      padding: 6px;
+    }
+
+    .chat-close-btn span {
+      position: absolute;
+      width: 16px;
+      height: 2px;
+      background: white;
+      transition: 0.3s ease;
+    }
+
+    /* Create the X */
+    .chat-close-btn span:first-child {
+      transform: rotate(45deg);
+    }
+
+    .chat-close-btn span:last-child {
+      transform: rotate(-45deg);
+    }
+
+    /* Hover effect */
+    .chat-close-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+    }
+
+    .chat-close-btn:hover span {
+      background: #e6e6e6;
+      transform: scale(1.2) rotate(45deg);
+    }
+
+    .chat-close-btn:hover span:last-child {
+      transform: scale(1.2) rotate(-45deg);
+    }
+
+    /* Body */
+    .chat-body {
+      padding: 15px;
+      font-size: 14px;
+    }
+
+    /* Container */
+    .chat-input {
+      display: flex;
+      align-items: flex-end;
+      /* align items to bottom */
+      border-top: 1px solid #eee;
+      padding: 5px;
+    }
+
+    /* Make textarea match your input style */
+    /* Textarea */
+    .chat-input textarea {
+      flex: 1;
+      padding: 10px;
+      resize: none;
+      border: none;
+      outline: none;
+      font-family: inherit;
+      font-size: 14px;
+      line-height: 1.4;
+
+      max-height: 150px;
+      /* optional: limit max height */
+      overflow-y: auto;
+      /* scroll if too tall */
+    }
+
+    /* Send button */
+    .chat-input button {
+      height: 40px;
+      /* fixed height */
+      min-width: 60px;
+      margin-left: 8px;
+      background: #25D366;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      flex-shrink: 0;
+      margin-bottom: 4px;
+      /* prevent shrinking/expanding */
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+      }
+
+      70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    .whatsapp-float {
+      animation: pulse 2.5s infinite;
+    }
+
+    .visible {
+      opacity: 1;
+      transform: translateY(0px);
+
+    }
   </style>
 </head>
+
 <body>
 
-<header id="navbar" class="navbar hidden">
-  <a href="#top" class="logo">
-  <img src="logo-header.png" alt="BuildPro Renovations Logo" />
-</a>
-  <a class="cta-btn" href="#contact">Get a Quote</a>
-</header>
-<section class="hero-wrapper">
+  <header id="navbar" class="navbar hidden">
+    <a href="#top" class="logo">
+      <img src="logo-header.png" alt="BuildPro Renovations Logo" />
+    </a>
+    <a class="cta-btn" href="#contact">Richiedi un preventivo</a>
+  </header>
+  <section class="hero-wrapper">
 
-  <div class="hero">
-    <div class="hero-content">
-      <h2>Reliable Renovation & Construction Services</h2>
-      <p>From foundations to finishing touches — we build with precision and trust.</p>
-      <a class="cta-btn" href="#contact">Request a Free Quote</a>
-    </div>
-  </div>
-
-  <div class="trust">
-  <div class="trust-item">
-    <span class="trust-number" data-target="10" data-suffix="+">0</span>
-    <span class="trust-label">Years Experience</span>
-  </div>
-
-  <div class="trust-item">
-    <span class="trust-number" data-target="250">0</span>
-    <span class="trust-label">Projects Completed</span>
-  </div>
-
-  <div class="trust-item">
-    <span class="trust-number" data-target="98">0</span>
-    <span class="trust-label">Client Satisfaction (%)</span>
-  </div>
-
-  <div class="trust-item">
-    <span class="trust-number" data-target="48">0</span>
-    <span class="trust-label">Hours Avg. Response</span>
-  </div>
-</div>
-
-</section>
-
-<section class="services-section">
-  <h2>Our Services</h2>
-
-  <div class="services">
-<div class="card">
-  <div class="card-image">
-    <img img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=60" alt="Home renovation" alt="Home renovation project">
-  </div>
-  <h3>Home Renovation</h3>
-  <p>Full renovation projects, from structure to finishing.</p>
-</div>
-
-    <div class="card">
-      <div class="card-image">
-      <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=60" alt="Bathroom remodeling">
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Ristrutturazioni <br> e <br> Costruzioni Affidabili</h1>
+        <p>Dalle fondamenta alle finiture — realizziamo lavori con precisione, qualità e affidabilità.</p>
+        <a class="cta-btn" href="#contact">Richiedi un preventivo</a>
       </div>
-      <h3>Bathroom Remodeling</h3>
-      <p>Modern, functional and durable bathroom transformations.</p>
     </div>
 
-    <div class="card">
-      <div class="card-image">
-        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=60" alt="Construction extension">
+    <div class="trust">
+      <div class="trust-item">
+        <span class="trust-number" data-target="10" data-suffix="+">0</span>
+        <span class="trust-label">Anni di esperienza</span>
       </div>
-      <h3>Extensions</h3>
-      <p>Expand your space with solid and compliant construction.</p>
-    </div>
 
-    <div class="card">
-      <div class="card-image">
-        <img src="https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=800&q=60" alt="Roofing work">
+      <div class="trust-item">
+        <span class="trust-number" data-target="250">0</span>
+        <span class="trust-label">Progetti completati</span>
       </div>
-      <h3>Roofing</h3>
-      <p>Reliable roofing solutions built for long-term protection.</p>
-    </div>
-  </div>
-  <div class="services-cta">
-  <a href="#contact" class="cta-btn">Get a Free Quote</a>
-</div>
-</section>
-<section class="before-after">
-  <h2>Before & After</h2>
 
-  <div class="ba-wrapper">
-    
-    <div class="ba-container" id="ba-container">
-      <!-- BEFORE -->
-      <img 
-        src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=60" 
-        class="ba-img before" 
-        id="before-img"
-        alt="Before renovation"
-      >
+      <div class="trust-item">
+        <span class="trust-number" data-target="98">0</span>
+        <span class="trust-label">Soddisfazione dei clienti (%)</span>
+      </div>
 
-      <!-- AFTER -->
-      <img 
-        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=60" 
-        class="ba-img after" 
-        id="after-img"
-        alt="After renovation"
-      >
-
-      <div class="ba-slider" id="slider"></div>
-
-      <div class="ba-label before-label" id="before-label">Before</div>
-      <div class="ba-label after-label" id="after-label">After</div>
-      <div class="ba-hint" id="ba-hint">⇆ Click & Slide</div>
+      <div class="trust-item">
+        <span class="trust-number" data-target="48">0</span>
+        <span class="trust-label">Tempo medio di risposta</span>
+      </div>
     </div>
 
-    <!-- TABS -->
-    <div class="ba-tabs">
-      <button class="active"
-        data-before="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=60"
-        data-after="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=60">
-        Living Room
+  </section>
+
+  <section class="services-section">
+    <h2>Cosa offriamo</h2>
+
+    <div class="services">
+      <div class="card">
+        <div class="card-image">
+          <img img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=60"
+            alt="Home renovation" alt="Home renovation project">
+        </div>
+        <h3>Ristrutturazione completa</h3>
+        <p>Interventi completi di ristrutturazione, dalla struttura alle finiture.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=60"
+            alt="Bathroom remodeling">
+        </div>
+        <h3>Ristrutturazione bagno</h3>
+        <p>Soluzioni moderne, funzionali e durevoli per la ristrutturazione del bagno.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=60"
+            alt="Construction extension">
+        </div>
+        <h3>Ampliamenti</h3>
+        <p>Amplia i tuoi spazi con interventi strutturali solidi e a norma.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=800&q=60"
+            alt="Roofing work">
+        </div>
+        <h3>Tetti e coperture</h3>
+        <p>Soluzioni affidabili per tetti e coperture, progettate per una protezione duratura.</p>
+      </div>
+    </div>
+    <div class="services-cta">
+      <a href="#contact" class="cta-btn">Richiedi un preventivo gratuito</a>
+    </div>
+  </section>
+  <section class="before-after">
+    <h2>Prima & Dopo</h2>
+
+    <div class="ba-wrapper">
+
+      <div class="ba-container" id="ba-container">
+        <!-- BEFORE -->
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=60"
+          class="ba-img before" id="before-img" alt="Before renovation">
+
+        <!-- AFTER -->
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=60"
+          class="ba-img after" id="after-img" alt="After renovation">
+
+        <div class="ba-slider" id="slider"></div>
+
+        <div class="ba-label before-label" id="before-label">Prima</div>
+        <div class="ba-label after-label" id="after-label">Dopo</div>
+        <div class="ba-hint" id="ba-hint">⇆ Clicca e scorri</div>
+      </div>
+
+      <!-- TABS -->
+      <div class="ba-tabs">
+        <button class="active"
+          data-before="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=60"
+          data-after="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=60">
+          Soggiorno
+        </button>
+
+        <button
+          data-before="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=60"
+          data-after="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=60">
+          Bagno
+        </button>
+
+        <button
+          data-before="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=60"
+          data-after="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=60">
+          Cucina
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="process">
+    <h2>Come lavoriamo</h2>
+
+    <div class="process-steps">
+
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Consulenza gratuita</h3>
+        <p>Analizziamo insieme il tuo progetto, le tue esigenze e le tue aspettative nei minimi dettagli.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Preventivo dettagliato</h3>
+        <p>Ricevi un preventivo chiaro e trasparente, senza costi nascosti.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Esecuzione del progetto</h3>
+        <p>Eseguiamo i lavori con precisione, comunicazione costante e rispetto per il cliente e l’ambiente.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Consegna finale</h3>
+        <p>Verifichiamo che tutto sia conforme alle tue aspettative prima della consegna finale.</p>
+      </div>
+
+    </div>
+    <div style="margin-top:40px;">
+      <a href="#contact" class="cta-btn">Inizia il tuo progetto</a>
+    </div>
+  </section>
+
+  <section class="testimonials">
+
+    <h2>Cosa dicono i nostri clienti</h2>
+    <p class="rating">
+      ⭐⭐⭐⭐⭐ Valutazione 4,9/5 basata sulle recensioni dei clienti
+    </p>
+    <div class="testimonials-wrapper">
+
+      <div class="testimonial">
+        <p>
+          “Molto professionali dall’inizio alla fine. Comunicazione chiara e lavoro di alta qualità. Il risultato ha
+          superato le nostre aspettative.”
+        </p>
+        <div class="client">
+          <span class="name">Giovanni D.</span>
+          <span class="meta">Ristrutturazione completa</span>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <p>
+          “Team affidabile, puntuale e con prezzi trasparenti. La ristrutturazione del bagno è stata completata
+          esattamente come previsto.”
+        </p>
+        <div class="client">
+          <span class="name">Sara M.</span>
+          <span class="meta">Ristrutturazione bagno</span>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <p>
+          “Ottima esperienza nel complesso. Hanno rispettato le scadenze e ci hanno tenuti aggiornati durante tutto il
+          progetto.”
+        </p>
+        <div class="client">
+          <span class="name">Davide L.</span>
+          <span class="meta">Progetto di ampliamento</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="credibility">
+
+    <!-- BLOCK 1 -->
+    <div class="credibility-block">
+      <div class="img">
+        <img src="team.jpg" alt="Construction workers collaborating on site" />
+        <p class="img-caption">
+          Coordinamento in cantiere e supervisione dei lavori nell’area di Messina
+        </p>
+      </div>
+
+      <div class="text">
+        <h2>Chi siamo</h2>
+        <p>
+          Siamo un team locale di ristrutturazioni con sede ad Amiens e oltre 10 anni di esperienza. Ci concentriamo su
+          lavori affidabili, comunicazione chiara e risultati di alta qualità.
+        </p>
+
+        <p class="highlight">
+          Gestione familiare • Esperienza consolidata • Completamente assicurati
+        </p>
+      </div>
+    </div>
+
+    <!-- BLOCK 2 -->
+    <div class="credibility-block reverse">
+      <div class="map">
+        <iframe src="https://maps.google.com/maps?q=Messina&t=&z=12&ie=UTF8&iwloc=&output=embed">
+        </iframe>
+      </div>
+
+      <div class="text">
+        <h2>Dove operiamo</h2>
+        <p>
+          Con sede ad Amiens, operiamo nelle aree circostanti con disponibilità flessibile dal lunedì al sabato
+        </p>
+      </div>
+
+
+    </div>
+
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Preventivo gratuito</h2>
+    <p>Raccontaci il tuo progetto — ti risponderemo entro 24–48 ore con un preventivo chiaro.</p>
+
+    <form>
+      <input type="text" placeholder="Il tuo nome" required />
+
+      <input type="tel" placeholder="Numero di telefono" required />
+
+      <input type="text" placeholder="Città / Luogo del progetto" />
+
+      <textarea rows="4" placeholder="Descrivi brevemente il tuo progetto"></textarea>
+
+      <button class="cta-btn" type="submit">
+        Richiedi il mio preventivo gratuito
       </button>
 
-      <button
-        data-before="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=60"
-        data-after="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=60">
-        Bathroom
-      </button>
+      <p class="form-note">
+        Nessun impegno. Rispettiamo la tua privacy.
+      </p>
+    </form>
+    <p style="margin-top:25px; font-size:13px; color:#bbb;">
+      ✔ Preventivi gratuiti
+      ✔ Prezzi trasparenti
+      ✔ Professionisti locali affidabili
+    </p>
+    <p style="margin-top:15px;">
+      Preferisci parlare con noi? Chiamaci direttamente: <strong>+1 346-676-7484</strong>
+    </p>
+  </section>
 
-      <button
-        data-before="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=60"
-        data-after="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=60">
-        Kitchen
+
+  <footer>
+    <p>© 2026 BuildPro Renovations. All rights reserved.</p>
+  </footer>
+
+  <!-- Floating button -->
+  <div class="whatsapp-float" onclick="toggleChat()">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+  </div>
+
+  <!-- Chat box -->
+  <div class="whatsapp-chat" id="whatsappChat">
+
+    <div class="chat-header">
+      <span>Chatta con noi</span>
+      <button class="chat-close-btn" onclick="toggleChat()" aria-label="Chiudi chat">
+        <span></span>
+        <span></span>
       </button>
     </div>
 
-  </div>
-</section>
+    <div class="chat-body">
+      <p>Ciao 👋 Come possiamo aiutarti?</p>
+    </div>
 
-<section>
-  <h2>Recent Projects</h2>
-  <div class="portfolio">
-    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=60" alt="project" />
-    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=60" alt="project" />
-  </div>
-</section>
+    <div class="chat-input">
+      <textarea id="userMessage" placeholder="Voglio richiedere un preventivo per il mio progetto...."></textarea>
 
-<section id="contact" class="contact">
-  <h2>Contact Us</h2>
-  <p>Tell us about your project and we’ll get back to you quickly.</p>
+      <button onclick="sendToWhatsApp()">Invia</button>
+    </div>
 
-  <form>
-    <input type="text" placeholder="Your Name" required />
-    <input type="tel" placeholder="Phone Number" required />
-    <textarea rows="4" placeholder="Describe your project"></textarea>
-    <button class="cta-btn" type="submit">Send Request</button>
-  </form>
-</section>
+      <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
 
-<footer>
-  <p>© 2026 BuildPro Renovations. All rights reserved.</p>
-</footer>
-<script>
-  //nav bar to appear when hero section gone
-  const navbar = document.getElementById("navbar");
-  const hero = document.querySelector(".hero-wrapper");
+    window.scrollTo(0, 0);
 
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        navbar.classList.add("hidden");
-      } else {
-        navbar.classList.remove("hidden");
+    window.addEventListener('load', () => {
+      if (window.location.hash) {
+        history.replaceState(null, null, window.location.pathname);
       }
-    },
-    { threshold: 0.2 }
-  );
-
-  observer.observe(hero);
-</script>
-
-<script>
-
-  // Animate trust items on scroll
-const trustSection = document.querySelector('.trust');
-
-const trustObserver = new IntersectionObserver((entries) => {
-  if (entries[0].isIntersecting) {
-    const items = document.querySelectorAll('.trust-item');
-
-    items.forEach((item, index) => {
-      setTimeout(() => {
-        item.classList.add('visible');
-      }, 150 + index * 120);
+      window.scrollTo(0, 0);
     });
+  </script>
 
-    trustObserver.disconnect(); // run once only
-  }
-}, { threshold: 0.5 });
+    <script>
+      //nav bar to appear when hero section gone
+      const navbar = document.getElementById("navbar");
+      const hero = document.querySelector(".hero-wrapper");
 
-trustObserver.observe(trustSection);
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            navbar.classList.add("hidden");
+          } else {
+            navbar.classList.remove("hidden");
+          }
+        },
+        { threshold: 0.2 }
+      );
 
-</script>
+      observer.observe(hero);
+    </script>
 
-<script>
-const counters = document.querySelectorAll('.trust-number');
+    <script>
 
-const counterObserver = new IntersectionObserver((entries) => {
-  if (entries[0].isIntersecting) {
+      // Animate trust items on scroll
+      const trustSection = document.querySelector('.trust');
 
-    counters.forEach(counter => {
-      const target = +counter.getAttribute('data-target');
-      const suffix = counter.getAttribute('data-suffix') || '';
-      let count = 0;
+      const trustObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          const items = document.querySelectorAll('.trust-item');
 
-      const update = () => {
-        const increment = target / 50;
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add('visible');
+            }, 150 + index * 120);
+          });
 
-        if (count < target) {
-          count += increment;
-          counter.innerText = Math.floor(count) + suffix;
-          requestAnimationFrame(update);
-        } else {
-          counter.innerText = Math.floor(count) + suffix;
+          trustObserver.disconnect(); // run once only
         }
-      };
+      }, { threshold: 0.5 });
 
-      update();
-    });
+      trustObserver.observe(trustSection);
 
-    counterObserver.disconnect();
-  }
-}, { threshold: 0.5 });
+    </script>
 
-counterObserver.observe(document.querySelector('.trust'));
-</script>
-<script>
-const container = document.getElementById('ba-container');
-const slider = document.getElementById('slider');
-const afterImg = document.getElementById('after-img');
-const beforeImg = document.getElementById('before-img');
+    <script>
+      const counters = document.querySelectorAll('.trust-number');
 
-let isDragging = false;
-let hasDragged = false;
-// Mouse
-slider.addEventListener('mousedown', () => {
-  isDragging = isDragging === true ? false :true
-});
-window.addEventListener('mouseup', () => {
-  console.log(isDragging);
-  if (!isDragging) return;
-   if (!hasDragged) {
-    slider.style.left = "50%";
-      afterImg.style.width = "50%";
-      hasDragged = true;
-      return;
-  }
+      const counterObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
 
-  const rect = container.getBoundingClientRect();
-  const currentLeft = parseFloat(slider.style.left);
-  const percent = currentLeft / rect.width;
+          counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            const suffix = counter.getAttribute('data-suffix') || '';
+            let count = 0;
 
-  if (percent < 0.1) {
-    slider.style.left = "0%";
-    afterImg.style.width = "0%";
-    beforeLabel.classList.add('active');
-    afterLabel.classList.remove('active');
-  }
+            const update = () => {
+              const increment = target / 50;
 
-  if (percent > 0.9) {
-    slider.style.left = "100%";
-    afterImg.style.width = "100%";
-    afterLabel.classList.add('active');
-    beforeLabel.classList.remove('active');
-  }
-});
-window.addEventListener('mousemove', (e) => {
-  if (!isDragging) return;
+              if (count < target) {
+                count += increment;
+                counter.innerText = Math.floor(count) + suffix;
+                requestAnimationFrame(update);
+              } else {
+                counter.innerText = Math.floor(count) + suffix;
+              }
+            };
 
-  const rect = container.getBoundingClientRect();
-  let x = e.clientX - rect.left;
-  x = Math.max(0, Math.min(x, rect.width));
+            update();
+          });
 
-  slider.style.left = x + 'px';
-  afterImg.style.width = x + 'px';
+          counterObserver.disconnect();
+        }
+      }, { threshold: 0.5 });
 
-updateLabelState(x, rect.width);});
+      counterObserver.observe(document.querySelector('.trust'));
+    </script>
+    <script>
+      const container = document.getElementById('ba-container');
+      const slider = document.getElementById('slider');
+      const afterImg = document.getElementById('after-img');
+      const beforeImg = document.getElementById('before-img');
 
-// Touch
-slider.addEventListener('touchstart', () => isDragging = true);
-window.addEventListener('touchend', () => isDragging = false);
+      let isDragging = false;
+      let hasDragged = false;
+      // Mouse
+      slider.addEventListener('mousedown', () => {
+        isDragging = isDragging === true ? false : true
+      });
+      window.addEventListener('mouseup', () => {
+        console.log(isDragging);
+        if (!isDragging) return;
+        if (!hasDragged) {
+          slider.style.left = "50%";
+          afterImg.style.width = "50%";
+          hasDragged = true;
+          return;
+        }
 
-window.addEventListener('touchmove', (e) => {
-  if (!isDragging) return;
+        const rect = container.getBoundingClientRect();
+        const currentLeft = parseFloat(slider.style.left);
+        const percent = currentLeft / rect.width;
 
-  const rect = container.getBoundingClientRect();
-  let x = e.touches[0].clientX - rect.left;
-  x = Math.max(0, Math.min(x, rect.width));
+        if (percent < 0.1) {
+          slider.style.left = "0%";
+          afterImg.style.width = "0%";
+          beforeLabel.classList.add('active');
+          afterLabel.classList.remove('active');
+        }
 
-  slider.style.left = x + 'px';
-  afterImg.style.width = x + 'px';
-});
+        if (percent > 0.9) {
+          slider.style.left = "100%";
+          afterImg.style.width = "100%";
+          afterLabel.classList.add('active');
+          beforeLabel.classList.remove('active');
+        }
+      });
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
 
-// Auto animation
-let hasAnimated = false;
+        const rect = container.getBoundingClientRect();
+        let x = e.clientX - rect.left;
+        x = Math.max(0, Math.min(x, rect.width));
 
-const baObserver = new IntersectionObserver((entries) => {
-  if (entries[0].isIntersecting && !hasAnimated) {
-    hasAnimated = true;
+        slider.style.left = x + 'px';
+        afterImg.style.width = x + 'px';
 
-    setTimeout(() => {
-      slider.style.left = "80%";
-      afterImg.style.width = "80%";
-    }, 300);
+        updateLabelState(x, rect.width);
+      });
 
-    setTimeout(() => {
-      slider.style.left = "20%";
-      afterImg.style.width = "20%";
-    }, 900);
+      // Touch
+      slider.addEventListener('touchstart', () => isDragging = true);
+      window.addEventListener('touchend', () => isDragging = false);
 
-    setTimeout(() => {
-      slider.style.left = "50%";
-      afterImg.style.width = "50%";
-    }, 1500);
-  }
-}, { threshold: 0.5 });
+      window.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
 
-baObserver.observe(container);
+        const rect = container.getBoundingClientRect();
+        let x = e.touches[0].clientX - rect.left;
+        x = Math.max(0, Math.min(x, rect.width));
 
-// Tabs switching
-const tabs = document.querySelectorAll('.ba-tabs button');
+        slider.style.left = x + 'px';
+        afterImg.style.width = x + 'px';
+      });
 
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
+      // Auto animation
+      let hasAnimated = false;
 
-    tabs.forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
+      const baObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !hasAnimated) {
+          hasAnimated = true;
 
-    beforeImg.src = tab.dataset.before;
-    afterImg.src = tab.dataset.after;
+          setTimeout(() => {
+            slider.style.left = "80%";
+            afterImg.style.width = "80%";
+          }, 300);
 
-    slider.style.left = "50%";
-    afterImg.style.width = "50%";
-  });
-});
-</script>
+          setTimeout(() => {
+            slider.style.left = "20%";
+            afterImg.style.width = "20%";
+          }, 900);
 
-<script>
-const beforeLabel = document.getElementById('before-label');
-const afterLabel = document.getElementById('after-label');
+          setTimeout(() => {
+            slider.style.left = "50%";
+            afterImg.style.width = "50%";
+          }, 1500);
+        }
+      }, { threshold: 0.5 });
 
-// --- CLICK EVENTS
+      baObserver.observe(container);
 
-beforeLabel.addEventListener('click', () => {
-  slider.style.left = "0%";
-  afterImg.style.width = "0%";
+      // Tabs switching
+      const tabs = document.querySelectorAll('.ba-tabs button');
 
-  beforeLabel.classList.add('active');
-  afterLabel.classList.remove('active');
-});
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
 
-afterLabel.addEventListener('click', () => {
-  slider.style.left = "100%";
-  afterImg.style.width = "100%";
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
 
-  afterLabel.classList.add('active');
-  beforeLabel.classList.remove('active');
-});
+          beforeImg.src = tab.dataset.before;
+          afterImg.src = tab.dataset.after;
+
+          slider.style.left = "50%";
+          afterImg.style.width = "50%";
+        });
+      });
+    </script>
+
+    <script>
+      const beforeLabel = document.getElementById('before-label');
+      const afterLabel = document.getElementById('after-label');
+
+      // --- CLICK EVENTS
+
+      beforeLabel.addEventListener('click', () => {
+        slider.style.left = "0%";
+        afterImg.style.width = "0%";
+
+        beforeLabel.classList.add('active');
+        afterLabel.classList.remove('active');
+      });
+
+      afterLabel.addEventListener('click', () => {
+        slider.style.left = "100%";
+        afterImg.style.width = "100%";
+
+        afterLabel.classList.add('active');
+        beforeLabel.classList.remove('active');
+      });
 
 
-// --- SYNC WITH DRAG
+      // --- SYNC WITH DRAG
 
-function updateLabelState(x, width) {
-  const percent = x / width;
+      function updateLabelState(x, width) {
+        const percent = x / width;
 
-  if (percent <= 0.05) {
-    beforeLabel.classList.add('active');
-    afterLabel.classList.remove('active');
-  } 
-  else if (percent >= 0.95) {
-    afterLabel.classList.add('active');
-    beforeLabel.classList.remove('active');
-  } 
-  else {
-    beforeLabel.classList.remove('active');
-    afterLabel.classList.remove('active');
-  }
-}
+        if (percent <= 0.05) {
+          beforeLabel.classList.add('active');
+          afterLabel.classList.remove('active');
+        }
+        else if (percent >= 0.95) {
+          afterLabel.classList.add('active');
+          beforeLabel.classList.remove('active');
+        }
+        else {
+          beforeLabel.classList.remove('active');
+          afterLabel.classList.remove('active');
+        }
+      }
 
-const hint = document.getElementById('ba-hint');
+      const hint = document.getElementById('ba-hint');
 
-function hideHint() {
-  if (hint) hint.style.opacity = 0;
-}
+      function hideHint() {
+        if (hint) hint.style.opacity = 0;
+      }
 
-slider.addEventListener('mousedown', hideHint);
-slider.addEventListener('touchstart', hideHint);
+      slider.addEventListener('mousedown', hideHint);
+      slider.addEventListener('touchstart', hideHint);
 
-beforeLabel.addEventListener('click', hideHint);
-afterLabel.addEventListener('click', hideHint);
-setTimeout(() => {
-  afterLabel.classList.add('active');
-}, 1600);
-</script>
+      beforeLabel.addEventListener('click', hideHint);
+      afterLabel.addEventListener('click', hideHint);
+      setTimeout(() => {
+        afterLabel.classList.add('active');
+      }, 1600);
+    </script>
+
+    <script>
+      // process
+      const steps = document.querySelectorAll('.step');
+
+      const processObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+
+          steps.forEach((step, index) => {
+            setTimeout(() => {
+              step.classList.add('visible');
+            }, 150 + index * 120);
+          });
+
+          processObserver.disconnect();
+        }
+      }, { threshold: 0.3 });
+
+      processObserver.observe(document.querySelector('.process'));
+    </script>
+
+    <script>
+      //testimonial
+      const testimonials = document.querySelectorAll('.testimonial');
+
+      const testimonialObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+
+          testimonials.forEach((item, index) => {
+            setTimeout(() => {
+              item.style.opacity = 1;
+              item.style.transform = "translateY(0)";
+            }, index * 120);
+          });
+
+          testimonialObserver.disconnect();
+        }
+      }, { threshold: 0.3 });
+
+      testimonials.forEach(item => {
+        item.style.opacity = 0;
+        item.style.transform = "translateY(10px)";
+      });
+
+      testimonialObserver.observe(document.querySelector('.testimonials'));
+    </script>
+    <script>
+      // WhatsApp
+      const whatsappFloat = document.querySelector('.whatsapp-float');
+      const services = document.querySelector('.services');
+
+      const servicesObserver = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            whatsappFloat.classList.add("visible");
+          }
+        },
+        { threshold: 0.2 }
+      );
+
+      servicesObserver.observe(services);
+
+      const input = document.getElementById("userMessage");
+
+      input.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          if (event.shiftKey) {
+            // Shift + Enter → new line
+            return;
+          } else {
+            // Enter → send message
+            event.preventDefault(); // prevent adding newline
+            const message = input.value.trim();
+            if (message !== "") {
+              sendToWhatsApp();
+            }
+          }
+        }
+      });
+      input.addEventListener("input", function () {
+        this.style.height = "auto";
+        this.style.height = (this.scrollHeight) + "px";
+      });
+      let userInteracted = false;
+      setTimeout(() => {
+        if (!userInteracted) {
+          whatsappFloat.classList.add('visible');
+          openChat(); // ✅ always opens (never toggles)
+        }
+      }, 5000);
+
+      function toggleChat() {
+        console.log("Hey Whatsapp")
+        userInteracted = true; // 🔥 user has interacted
+        const chat = document.getElementById("whatsappChat");
+        chat.classList.toggle("active");
+      }
+      /* Dedicated open function */
+      function openChat() {
+        const chat = document.getElementById("whatsappChat");
+        chat.classList.add("active");
+      }
+
+
+      function sendToWhatsApp() {
+        const input = document.getElementById("userMessage");
+        const message = input.value;
+
+        const phoneNumber = "+34667218526"; // replace with your number
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+        window.open(url, "_blank");
+
+        input.value = ""; // clear after sending
+        input.style.height = "auto"; // reset height
+      }
+    </script>
 </body>
+
 </html>
